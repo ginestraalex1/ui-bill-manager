@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NumberFieldComponent } from './components/number-field.component';
+import { LoginPageComponent } from './login-page.component';
 
-describe('NumberFieldComponent', () => {
-  let component: NumberFieldComponent;
-  let fixture: ComponentFixture<NumberFieldComponent>;
+describe('LoginPageComponent', () => {
+  let component: LoginPageComponent;
+  let fixture: ComponentFixture<LoginPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NumberFieldComponent]
+      imports: [LoginPageComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NumberFieldComponent);
+    fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
