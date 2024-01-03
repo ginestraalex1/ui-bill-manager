@@ -1,30 +1,26 @@
 <mat-toolbar color="primary" *ngIf="isLogged()">
   <mat-toolbar-row>
-    <button mat-icon-button aria-label="Home nav button">
+    <button mat-icon-button aria-label="page d'accueil" 
+            matTooltip="page d'accueil" (click)="goTo('/home')">
       <mat-icon>home</mat-icon>
     </button>
     <span class="nav-bar-spacer"></span>
 
-
-    <button mat-flat-button tool-tip="nouveau dossier" (click)="goToNewCustomerFolder()">
-      <mat-icon>add</mat-icon>
-      <mat-icon>folder</mat-icon>
+    <button mat-flat-button class="new-folder-button"
+        matTooltip="nouveau dossier" aria-label="nouveau dossier" (click)="goTo('/new-customer-folder')">
+      <mat-icon color="primary">add</mat-icon>
+      <mat-icon color="primary">folder</mat-icon>
     </button>
-    <button mat-icon-button aria-label="Account nav button" [matMenuTriggerFor]="loggingMenu">
+    <button mat-icon-button matTooltip="menu compte utilisateur" aria-label="menu compte utilisateur" [matMenuTriggerFor]="loggingMenu">
       <mat-icon>account_circle</mat-icon>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
 
-
 <mat-menu #loggingMenu>
-  <button mat-menu-item (click)="logOut()">
+  <button mat-menu-item matTooltip="se déconnecter" aria-label="se déconnecter" (click)="logOut()">
     <mat-icon>power_settings_new</mat-icon>
     <span>Log out</span>
-  </button>
-  <button mat-menu-item *ngIf="!isLogged()" (click)="goToLoginPage()">
-    <mat-icon>login</mat-icon>
-    <span>login</span>
   </button>
 </mat-menu>
 

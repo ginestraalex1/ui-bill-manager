@@ -4,6 +4,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -24,6 +25,7 @@ import { LoginService } from '../../services/login.service';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatTooltipModule,
     AsyncPipe,
     NgIf
   ]
@@ -43,12 +45,13 @@ export class NavBarComponent {
 
   logOut(): void {
     this.loginService.logOut();
-    this.goToLoginPage();
+    this.goTo('log-in');
   }
 
-  goToLoginPage() {
-    this.router.navigate(['/log-in']);
+  goTo(path: String){
+    this.router.navigate([path]);
   }
+
 
   goToNewCustomerFolder() {
     this.router.navigate(['/new-customer-folder']);
