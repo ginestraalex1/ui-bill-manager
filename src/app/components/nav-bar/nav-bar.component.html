@@ -1,29 +1,23 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      @if (isHandset$ | async) {
-        <button
-          type="button"
-          aria-label="Toggle sidenav"
-          mat-icon-button
-          (click)="drawer.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-      }
-      <span>ui-bill-manager</span>
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button aria-label="Home nav button" *ngIf="isLogged()">
+      <mat-icon>home</mat-icon>
+    </button>
+    <span class="nav-bar-spacer"></span>
+    <button mat-icon-button aria-label="Account nav button" [matMenuTriggerFor]="loggingMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-menu #loggingMenu>
+  <button mat-menu-item *ngIf="isLogged()" (click)="logOut()">
+    <mat-icon>power_settings_new</mat-icon>
+    <span>Log out</span>
+  </button>
+  <button mat-menu-item *ngIf="!isLogged()" (click)="goToLoginPage()">
+    <mat-icon>login</mat-icon>
+    <span>login</span>
+  </button>
+</mat-menu>
