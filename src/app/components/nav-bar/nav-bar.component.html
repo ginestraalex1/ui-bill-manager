@@ -1,9 +1,15 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" *ngIf="isLogged()">
   <mat-toolbar-row>
-    <button mat-icon-button aria-label="Home nav button" *ngIf="isLogged()">
+    <button mat-icon-button aria-label="Home nav button">
       <mat-icon>home</mat-icon>
     </button>
     <span class="nav-bar-spacer"></span>
+
+
+    <button mat-flat-button tool-tip="nouveau dossier" (click)="goToNewCustomerFolder()">
+      <mat-icon>add</mat-icon>
+      <mat-icon>folder</mat-icon>
+    </button>
     <button mat-icon-button aria-label="Account nav button" [matMenuTriggerFor]="loggingMenu">
       <mat-icon>account_circle</mat-icon>
     </button>
@@ -12,7 +18,7 @@
 
 
 <mat-menu #loggingMenu>
-  <button mat-menu-item *ngIf="isLogged()" (click)="logOut()">
+  <button mat-menu-item (click)="logOut()">
     <mat-icon>power_settings_new</mat-icon>
     <span>Log out</span>
   </button>
@@ -21,3 +27,4 @@
     <span>login</span>
   </button>
 </mat-menu>
+

@@ -50,6 +50,10 @@ export class NavBarComponent {
     this.router.navigate(['/log-in']);
   }
 
+  goToNewCustomerFolder() {
+    this.router.navigate(['/new-customer-folder']);
+  }
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
