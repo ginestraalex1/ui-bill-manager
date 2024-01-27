@@ -1,25 +1,33 @@
 <mat-toolbar>
-    <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with menu icon"
+    <mat-icon class="toolbar-icon">elderly</mat-icon>
+    <span class="title">R.I.P Application</span>
+    <span class="spacer"></span>
+
+    <div
+        class="user-button"
+        [matMenuTriggerFor]="menu"
+        aria-label="button menu"
     >
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button
-        mat-icon-button
-        class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon"
-    >
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with share icon"
-    >
-        <mat-icon>share</mat-icon>
-    </button>
+        <mat-icon
+            class="toolbar-icon"
+            aria-hidden="false"
+            aria-label="user icon"
+            fontIcon="person"
+        ></mat-icon>
+        {{ username }}
+    </div>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+        </button>
+    </mat-menu>
 </mat-toolbar>

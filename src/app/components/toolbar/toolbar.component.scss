@@ -1,0 +1,25 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.user-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--green-500);
+    font-size: 16px;
+}
+
+.title {
+    color: var(--green-500);
+    font-size: 20px;
+}
+
+.toolbar-icon {
+    color: var(--green-700);
+    margin-right: 4px;
+}
+
+mat-toolbar {
+    background-color: white;
+}
