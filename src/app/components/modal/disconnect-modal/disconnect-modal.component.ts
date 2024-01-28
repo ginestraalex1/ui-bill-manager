@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {
     MatDialogRef,
     MatDialogTitle,
@@ -7,6 +8,7 @@ import {
     MatDialogActions,
     MatDialogClose,
 } from '@angular/material/dialog';
+import { SnackbarComponent } from 'app/components/snackbar/snackbar.component';
 
 @Component({
     selector: 'disconnect-modal',
@@ -22,10 +24,27 @@ import {
     ],
 })
 export class DisconnectModalComponent {
-    constructor(public dialogRef: MatDialogRef<DisconnectModalComponent>) {}
+    constructor(
+        public readonly dialogRef: MatDialogRef<DisconnectModalComponent>,
+        private readonly snackBar: MatSnackBar
+    ) {}
 
     public disconnect(): void {
         console.log('TODO: disconnect');
+
+        //if disconnect is success
+        this.snackBar.openFromComponent<SnackbarComponent, SnackbarConfig>(
+            SnackbarComponent,
+            {
+                data: { title: 'Déconnection effectué avec succès' },
+                panelClass: 'success-snackbar',
+                duration: 100000,
+            }
+        );
         this.dialogRef.close();
     }
+}
+
+export interface SnackbarConfig {
+    title: string;
 }

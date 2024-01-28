@@ -1,0 +1,11 @@
+<span matSnackBarLabel> {{ data.title }} </span>
+<span matSnackBarActions>
+    <button
+        mat-icon-button
+        aria-label="close button"
+        matSnackBarAction
+        (click)="snackBarRef.dismissWithAction()"
+    >
+        <mat-icon>close</mat-icon>
+    </button>
+</span>
