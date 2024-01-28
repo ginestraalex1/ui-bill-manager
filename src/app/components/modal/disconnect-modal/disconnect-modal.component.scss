@@ -1,0 +1,16 @@
+h1 {
+    margin: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex {
+    flex: 1;
+}
+
+.disconnect {
+    background-color: var(--green-500) !important;
+}
