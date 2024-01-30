@@ -9,6 +9,18 @@
     flex-direction: column;
 }
 
+.left {
+    margin-right: auto;
+}
+
 .right {
     margin-left: auto;
+}
+
+.green-500 {
+    background-color: var(--green-500) !important;
+}
+
+.white-text {
+    color: white !important;
 }
