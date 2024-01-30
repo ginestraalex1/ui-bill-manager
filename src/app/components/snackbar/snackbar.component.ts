@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
     selector: 'snackbar',
     templateUrl: './snackbar.component.html',
+    styleUrl: './snackbar.component.scss',
     standalone: true,
     imports: [MatButtonModule, MatIconModule],
 })

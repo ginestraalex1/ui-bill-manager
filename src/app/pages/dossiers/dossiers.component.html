@@ -1,6 +1,10 @@
 <div class="container">
     <div class="centered">
-        <button mat-flat-button class="green-500 white-text left">
+        <button
+            mat-flat-button
+            class="green-500 white-text left"
+            (click)="createDossier()"
+        >
             <mat-icon aria-label="icon edit">edit</mat-icon>
             <span>Nouvelle déclaration</span>
         </button>
