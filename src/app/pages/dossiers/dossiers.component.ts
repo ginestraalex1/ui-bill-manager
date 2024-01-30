@@ -5,6 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 @Component({
     selector: 'dossiers',
     templateUrl: './dossiers.component.html',
+    styleUrl: './dossiers.component.scss',
     standalone: true,
     imports: [MatButtonModule, RouterModule],
 })
