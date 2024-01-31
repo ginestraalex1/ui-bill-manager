@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
 import { SidenavComponent } from '../../components/sidenav/sidenav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -16,4 +16,5 @@ import { RouterOutlet } from '@angular/router';
         RouterOutlet,
     ],
 })
-export class HomeComponent {}
+export class HomeComponent {
+}

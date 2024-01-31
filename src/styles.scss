@@ -5,7 +5,14 @@ body {
     margin: 0;
 }
 
+// --------------------CHANGE ANGULAR MATERIAL COMPONENT----------------------
+
 .mdc-snackbar__label,
 .mdc-snackbar__surface {
     padding: 0 !important;
+}
+
+.mat-mdc-progress-bar {
+    --mdc-linear-progress-active-indicator-color: white;
+    opacity: 0.5;
 }

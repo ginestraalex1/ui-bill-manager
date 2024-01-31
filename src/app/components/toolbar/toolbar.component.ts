@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,11 +14,10 @@ import { DisconnectModalComponent } from '../modal/disconnect-modal/disconnect-m
     standalone: true,
 })
 export class ToolbarComponent {
+    private readonly dialog = inject(MatDialog);
     public username = 'Cloé Tydek';
 
-    constructor(public dialog: MatDialog) {}
-
-    openDisconnectModal(): void {
+    public openDisconnectModal(): void {
         const dialogRef = this.dialog.open(DisconnectModalComponent);
 
         dialogRef.afterClosed().subscribe((result) => {
