@@ -4,6 +4,11 @@ import { HomeComponent } from './pages/home-page/home.component';
 export const routes: Routes = [
     {
         path: '',
+        redirectTo: 'home',
+        pathMatch: 'full',
+    },
+    {
+        path: 'home',
         component: HomeComponent,
         children: [
             {
@@ -37,5 +42,16 @@ export const routes: Routes = [
                 redirectTo: 'dossiers',
             },
         ],
+    },
+    {
+        path: 'nouveau-dossier',
+        loadComponent: () =>
+            import('./pages/nouveau-dossier/nouveau-dossier.component').then(
+                (module) => module.NouveauDossierComponent
+            ),
+    },
+    {
+        path: '**',
+        redirectTo: 'home',
     },
 ];

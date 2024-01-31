@@ -1,11 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
-import { SnackbarConfig } from 'app/components/modal/disconnect-modal/disconnect-modal.component';
-import { SnackbarComponent } from 'app/components/snackbar/snackbar.component';
 
 @Component({
     selector: 'dossiers',
@@ -17,24 +14,16 @@ import { SnackbarComponent } from 'app/components/snackbar/snackbar.component';
 export class DossiersComponent {
     private readonly router = inject(Router);
 
-    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-    dataSource = ELEMENT_DATA;
-
-    constructor(private readonly snackBar: MatSnackBar) {}
+    public displayedColumns: string[] = [
+        'position',
+        'name',
+        'weight',
+        'symbol',
+    ];
+    public dataSource = ELEMENT_DATA;
 
     public goTo(name: string): void {
         this.router.navigate([name]);
-    }
-
-    public createDossier(): void {
-        this.snackBar.openFromComponent<SnackbarComponent, SnackbarConfig>(
-            SnackbarComponent,
-            {
-                data: { title: 'TODO: faire un nouveau dossier' },
-                panelClass: 'warning-snackbar',
-                duration: 100000,
-            }
-        );
     }
 }
 

@@ -1,10 +1,17 @@
 .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 
-    button {
-        --mdc-icon-button-state-layer-size: 24px;
-        padding: 0;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 8px;
+        padding-right: 8px;
+        padding-left: 8px;
+        button {
+            --mdc-icon-button-state-layer-size: 24px;
+            padding: 0;
+        }
     }
 }

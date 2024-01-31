@@ -9,6 +9,7 @@ import {
     MatDialogClose,
 } from '@angular/material/dialog';
 import { SnackbarComponent } from 'app/components/snackbar/snackbar.component';
+import { SnackbarConfig } from 'app/models/snackbar/snackbar-config.model';
 
 @Component({
     selector: 'disconnect-modal',
@@ -36,15 +37,12 @@ export class DisconnectModalComponent {
         this.snackBar.openFromComponent<SnackbarComponent, SnackbarConfig>(
             SnackbarComponent,
             {
-                data: { title: 'Déconnection effectué avec succès' },
+                data: {
+                    title: 'Déconnection effectué avec succès',
+                },
                 panelClass: 'success-snackbar',
-                duration: 100000,
             }
         );
         this.dialogRef.close();
     }
-}
-
-export interface SnackbarConfig {
-    title: string;
 }

@@ -4,3 +4,8 @@
 body {
     margin: 0;
 }
+
+.mdc-snackbar__label,
+.mdc-snackbar__surface {
+    padding: 0 !important;
+}
