@@ -1,10 +1,12 @@
 <mat-toolbar>
-    <mat-icon class="toolbar-icon">elderly</mat-icon>
-    <span class="title">R.I.P Application</span>
+    <div class="flex-center button" (click)="goHome()">
+        <mat-icon class="toolbar-icon">elderly</mat-icon>
+        <span class="title green-500">R.I.P Application</span>
+    </div>
     <span class="spacer"></span>
 
     <div
-        class="user-button"
+        class="flex-center button green-500"
         [matMenuTriggerFor]="menu"
         aria-label="button menu"
     >

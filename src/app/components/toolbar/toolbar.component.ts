@@ -5,6 +5,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialog } from '@angular/material/dialog';
 import { DisconnectModalComponent } from '../modal/disconnect-modal/disconnect-modal.component';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'toolbar',
@@ -15,7 +16,12 @@ import { DisconnectModalComponent } from '../modal/disconnect-modal/disconnect-m
 })
 export class ToolbarComponent {
     private readonly dialog = inject(MatDialog);
+    private readonly router = inject(Router);
     public username = 'Cloé Tydek';
+
+    public goHome(): void {
+        this.router.navigate(['home']);
+    }
 
     public openDisconnectModal(): void {
         const dialogRef = this.dialog.open(DisconnectModalComponent);

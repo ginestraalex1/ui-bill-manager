@@ -2,16 +2,20 @@
     flex: 1 1 auto;
 }
 
-.user-button {
+.flex-center {
     display: flex;
     align-items: center;
-    cursor: pointer;
+}
+
+.green-500 {
     color: var(--green-500);
-    font-size: 16px;
+}
+
+.button {
+    cursor: pointer;
 }
 
 .title {
-    color: var(--green-500);
     font-size: 20px;
 }
 
