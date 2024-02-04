@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>êtes-vous certain(e) de vouloir vous déconnecter ?</h1>
+<div mat-dialog-content class="center">
+    <p>Vous allez être redirigé(e) vers la page de connexion.</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-flat-button mat-dialog-close class="flex">Annuler</button>
+    <button mat-flat-button class="flex disconnect" (click)="disconnect()">
+        Se déconnecter
+    </button>
+</div>

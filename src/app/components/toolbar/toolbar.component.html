@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <mat-icon class="toolbar-icon">elderly</mat-icon>
+    <span class="title">R.I.P Application</span>
+    <span class="spacer"></span>
+
+    <div
+        class="user-button"
+        [matMenuTriggerFor]="menu"
+        aria-label="button menu"
+    >
+        <mat-icon
+            class="toolbar-icon"
+            aria-hidden="false"
+            aria-label="user icon"
+            fontIcon="person"
+        ></mat-icon>
+        {{ username }}
+    </div>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="openDisconnectModal()">
+            <mat-icon class="disconnect-icon">power_settings_new</mat-icon>
+            <span>Déconnexion</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>
